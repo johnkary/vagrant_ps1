@@ -3,6 +3,11 @@
 Provides visual feedback if a Vagrant virtual machine has been launched from
 the current working directory.
 
+## Requirements
+
+* `php` binary must be available in your $PATH to execute script that
+  compares current dir VM to running VMs
+
 ## Installation
 
 1. Clone directory to your `~/.vagrant.d` directory:
