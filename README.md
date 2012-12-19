@@ -34,3 +34,9 @@ export PS1="\$(__vagrant_dir)$PS1"
 ```
 $ source ~/.bash_profile
 ```
+
+## TODO
+
+* Port current PHP script to Ruby so an additional binary is not needed.
+  Vagrant already needs `ruby` to run, so the script that checks for it
+  should also be written in that language.
