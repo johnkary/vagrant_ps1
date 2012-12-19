@@ -3,6 +3,10 @@
 Provides visual feedback if a Vagrant virtual machine has been launched from
 the current working directory.
 
+When properly configured you should see a green ‣ in your PS1:
+
+![](http://img16.imageshack.us/img16/6660/vagrantps1.png)
+
 ## Requirements
 
 * `php` binary must be available in your $PATH to execute script that
