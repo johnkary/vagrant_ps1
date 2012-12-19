@@ -36,6 +36,14 @@ export PS1="\$(__vagrant_dir)$PS1"
 $ source ~/.bash_profile
 ```
 
+5. Change into a directory where you have a `Vagrantfile` and launch the
+   VM. You should then see a green ‣ in your PS1.
+```
+$ cd myproject
+$ vagrant up
+‣$
+```
+
 ## TODO
 
 * Port current PHP script to Ruby so an additional binary is not needed.
