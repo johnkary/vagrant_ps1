@@ -20,8 +20,9 @@ git clone git@github.com/johnkary/vagrant_ps1.git ~/.vagrant.d/
 source ~/.vagrant.d/vagrant_ps1/dir.sh
 ```
 
-3. Add the bash function `\$(__vagrant_dir)` to your PS1 where you'd like the
-    indicator to appear. This example would prepend it to your current PS1:
+3. From your `~/.bash_profile`, add the bash function `\$(__vagrant_dir)` to
+  your PS1 where you'd like the indicator to appear. This example would prepend
+  it to your current PS1:
 ```bash
 export PS1="\$(__vagrant_dir)$PS1"
 ```
