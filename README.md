@@ -16,7 +16,7 @@ When properly configured you should see a green ‣ in your PS1:
 
 1. Clone directory to your `~/.vagrant.d` directory:
 ```
-git clone git@github.com/johnkary/vagrant_ps1.git ~/.vagrant.d/
+git clone https://github.com/johnkary/vagrant_ps1.git ~/.vagrant.d/vagrant_ps1
 ```
 
 2. Source the `dir.sh` file in this repository into your `~/.bash_profile`:
