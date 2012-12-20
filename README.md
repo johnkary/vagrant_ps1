@@ -14,29 +14,30 @@ When properly configured you should see a green ‣ in your PS1:
 
 ## Installation
 
-1. Clone directory to your `~/.vagrant.d` directory:
+1. Clone directory to your somewhere in your home directory. Suggest a
+   hidden directory or your own versioned dotfiles directory. If you're
+   not picky and just want to follow along, clone this repository to
+   `~/.vagrant_ps1`:
 ```
-git clone https://github.com/johnkary/vagrant_ps1.git ~/.vagrant.d/vagrant_ps1
-```
-
-2. Source the `dir.sh` file in this repository into your `~/.bash_profile`:
-```bash
-source ~/.vagrant.d/vagrant_ps1/dir.sh
+git clone https://github.com/johnkary/vagrant_ps1.git ~/.vagrant_ps1
 ```
 
-3. From your `~/.bash_profile`, add the bash function `\$(__vagrant_dir)` to
-  your PS1 where you'd like the indicator to appear. This example would prepend
-  it to your current PS1:
+2. The script `dir.sh` contains a bash function `\$(__vagrant_dir)` that you
+   want to add to your PS1. Add the following lines to `~/.bash_profile` which
+   will add the green ‣ at the start of your PS1 line when a Vagrant VM
+   has been booted from that directory.
 ```bash
+source ~/.vagrant_ps1/dir.sh
 export PS1="\$(__vagrant_dir)$PS1"
 ```
 
-4. Open a new bash session or source your `~/.bash_profile`:
+3. Open a new bash session or source your `~/.bash_profile` from your
+   currently open session:
 ```
 $ source ~/.bash_profile
 ```
 
-5. Change into a directory where you have a `Vagrantfile` and launch the
+4. Change into a directory where you have a `Vagrantfile` and launch the
    VM. You should then see a green ‣ in your PS1.
 ```
 $ cd myproject
