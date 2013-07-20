@@ -5,16 +5,14 @@
  * Author: John Kary <john@johnkary.net>
  */
 $cwd = getcwd();
-$filecontents = getVagrantFileRunningInDir($cwd);
+$uuid = getVagrantUuidInDir($cwd);
 
-if (false === $filecontents) {
+if (false === $uuid) {
     // No vagrant file in this dir
     exit(1);
 }
 
-$uuid = getDirVagrantUuid($filecontents);
 $runningVms = getRunningVms();
-
 if (!isVmRunning($runningVms, $uuid)) {
     // VM not running
     exit(1);
@@ -24,9 +22,9 @@ if (!isVmRunning($runningVms, $uuid)) {
 exit(0);
 
 
-function getVagrantFileRunningInDir($dir)
+function getVagrantUuidInDir($dir)
 {
-    $path = realpath($dir . '/.vagrant');
+    $path = realpath($dir . '/.vagrant/machines/default/virtualbox/id');
 
     if (false === $path) {
         // File with UUID doesn't exist
@@ -34,12 +32,6 @@ function getVagrantFileRunningInDir($dir)
     }
 
     return file_get_contents($path);
-}
-function getDirVagrantUuid($filecontents)
-{
-    $vagrantJson = json_decode($filecontents);
-
-    return $vagrantJson->active->default;
 }
 function getRunningVms()
 {
