@@ -29,7 +29,8 @@ function getVagrantFileRunningInDir($dir)
     $path = realpath($dir . '/.vagrant');
 
     if (false === $path) {
-      return false;
+        // File with UUID doesn't exist
+        return false;
     }
 
     return file_get_contents($path);
